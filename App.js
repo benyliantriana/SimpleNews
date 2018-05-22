@@ -1,23 +1,20 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React, { Component } from 'react'
+import { View, StatusBar } from 'react-native'
+import { Colors } from './App/Themes'
+import Navigation from './App/Navigation/Navigation'
 
-export default class App extends React.Component {
+class App extends Component {
   render () {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+      <View style={{ flex: 1 }}>
+        <StatusBar
+          backgroundColor={Colors.statusBar}
+          barStyle='light-content'
+        />
+        <Navigation />
       </View>
     )
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
+export default App
