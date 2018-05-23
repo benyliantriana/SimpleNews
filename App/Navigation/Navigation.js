@@ -6,6 +6,8 @@ import {
 } from 'react-native-router-flux'
 
 import Home from '../Containers/Home'
+import News from '../Containers/News'
+import DetailNews from '../Containers/DetailNews'
 
 /**
  * key is the variable we used to call the container (can be pop, push, reset, etc)
@@ -26,6 +28,18 @@ const Navigation = () => (
         title=''
         hideNavBar
         component={Home}
+      />
+      <Scene
+        key='news'
+        title=''
+        hideNavBar
+        component={News}
+      />
+      <Scene
+        key='detailnews'
+        title=''
+        hideNavBar
+        component={DetailNews}
       />
     </Stack>
   </Router>

@@ -3,7 +3,8 @@
 */
 
 const images = {
-  back: require('../Images/back.png')
+  back: require('../Images/back.png'),
+  search: require('../Images/search.png')
 }
 
 export default images

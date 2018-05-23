@@ -1,7 +1,9 @@
 import Header from './Header'
-import News from './News'
+import SourceList from './SourceList'
+import NewsList from './NewsList'
 
 export {
   Header,
-  News
+  SourceList,
+  NewsList
 }

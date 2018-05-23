@@ -9,5 +9,12 @@ export default StyleSheet.create({
     padding: 10,
     backgroundColor: Colors.newsBackground,
     elevation: 1
+  },
+  images: {
+    marginRight: 15,
+    width: 75,
+    height: 75,
+    borderRadius: 4,
+    resizeMode: 'cover'
   }
 })

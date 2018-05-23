@@ -15,13 +15,12 @@ export default StyleSheet.create({
   },
   buttonBack: {
     flex: 1,
-    padding: 5,
     alignItems: 'center',
     justifyContent: 'center'
   },
   icon: {
-    height: 45,
-    width: 45,
+    height: 24,
+    width: 24,
     resizeMode: 'contain'
   },
   titleContainer: {

@@ -7,7 +7,7 @@ import {
   ActivityIndicator,
   Platform
 } from 'react-native'
-import { Actions, ActionConst } from 'react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import PropTypes from 'prop-types'
 
 import { appName } from '../config'
@@ -40,7 +40,7 @@ export default class Header extends React.Component {
     if (this.state.showLeftButton) {
       return (
         <TouchableOpacity
-          onPress={() => {}}
+          onPress={() => Actions.pop()}
           style={styles.buttonBack}
         >
           <Image source={Images.back} style={styles.icon} />
@@ -51,6 +51,7 @@ export default class Header extends React.Component {
   }
 
   renderTitle () {
+    let label = this.props.title === null ? appName : this.props.title
     let title = this.props.isLoading ? (
       <View style={styles.titleContainer}>
         <ActivityIndicator size='small' color={Colors.background} />
@@ -61,7 +62,7 @@ export default class Header extends React.Component {
     ) : (
       <View style={styles.titleContainer}>
         <Text style={[styles.textTitle, { marginLeft: 5 }]}>
-          {appName}
+          {label}
         </Text>
       </View>
     )

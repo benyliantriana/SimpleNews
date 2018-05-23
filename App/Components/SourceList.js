@@ -5,21 +5,15 @@ import {
   TouchableNativeFeedback
 } from 'react-native'
 
-import styles from './Styles/NewsStyles'
+import styles from './Styles/SourceListStyles'
 
 import { Colors } from '../Themes'
 
-export default class News extends React.PureComponent {
-  constructor (props) {
-    super(props)
-    this.state = {
-    }
-  }
-
+export default class SourceList extends React.PureComponent {
   render () {
     const { title, description, category } = this.props
     return (
-      <TouchableNativeFeedback>
+      <TouchableNativeFeedback onPress={() => this.props.onPress()}>
         <View style={styles.container}>
           <Text style={{ color: Colors.actionBar }}>{title}</Text>
           <Text style={{ color: '#707070', marginTop: 2, fontSize: 12 }}>{description}</Text>
