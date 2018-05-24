@@ -2,29 +2,31 @@ import React from 'react'
 import {
   View,
   Text,
-  TouchableNativeFeedback
+  TouchableNativeFeedback,
+  TouchableHighlight,
+  Platform
 } from 'react-native'
 
 import styles from './Styles/SourceListStyles'
 
-import { Colors } from '../Themes'
+const Button = Platform.OS === 'ios' ? TouchableHighlight : TouchableNativeFeedback
 
 export default class SourceList extends React.PureComponent {
   render () {
     const { title, description, category } = this.props
     return (
-      <TouchableNativeFeedback onPress={() => this.props.onPress()}>
+      <Button onPress={() => this.props.onPress()}>
         <View style={styles.container}>
-          <Text style={{ color: Colors.actionBar }}>{title}</Text>
-          <Text style={{ color: '#707070', marginTop: 2, fontSize: 12 }}>{description}</Text>
-          <View style={{ flexDirection: 'row', marginTop: 3 }}>
+          <Text style={styles.titleSourceNews}>{title}</Text>
+          <Text style={styles.descriptionSourceNews}>{description}</Text>
+          <View style={styles.rowSourceNews}>
             <View style={{ flex: 1 }} />
-            <Text style={{ color: Colors.actionBar, fontSize: 10 }}>
+            <Text style={styles.categorySourceNews}>
               Category: {category}
             </Text>
           </View>
         </View>
-      </TouchableNativeFeedback>
+      </Button>
     )
   }
 }

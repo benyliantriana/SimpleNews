@@ -113,8 +113,10 @@ class News extends React.Component {
       if (item.urlToImage.includes('https') || item.urlToImage.includes('http')) {
         image = item.urlToImage
       } else {
-        image = null
+        image = ''
       }
+    } else {
+      image = ''
     }
     return (
       <NewsList
